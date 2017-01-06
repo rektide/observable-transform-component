@@ -1,0 +1,19 @@
+{
+	"name": "observable-transform-component",
+	"version": "1.0.0",
+	"description": "Web Component to declaratively assemble observable pipelines",
+	"main": "observable-transform-component.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/observable-transform-component"
+	},
+	"keywords": ["observable", "web component"],
+	"author": "rektide de la faye",
+	"license": "X11",
+	"dependencies": {
+		"most": "^1.1.1"
+	}
+}
