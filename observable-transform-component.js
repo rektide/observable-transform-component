@@ -12,7 +12,6 @@ class ObservableTransform extends HTMLElement{
 		this.stream= inner.switchLatest()
 	}
 	changedCallback(){
-		this.stream= null
 		var
 		  src= this.getAttribute( "src"),
 		  target
