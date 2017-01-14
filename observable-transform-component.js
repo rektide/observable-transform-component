@@ -31,7 +31,7 @@ class ObservableTransform extends HTMLElement{
 			}
 			el.setAttribute("src", srcId)
 			return el
-		}, src)
+		}, src).stream
 	}
 	get attributeChangedBack(){ return this.changedCallback}
 	get childChangedCallback(){ return this.changedCallback}
