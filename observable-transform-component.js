@@ -4,6 +4,7 @@ var
   childChangedCallback= require( "child-changed-callback")
 
 class ObservableTransform extends HTMLElement{
+	static get observedAttributes(){ return ["src"]}
 	constructor(){
 		super()
 		var inner= new MostCreate( _switch => this._switch= _switch)
