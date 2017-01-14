@@ -10,10 +10,14 @@
 		"type": "git",
 		"url": "https://archive.voodoowarez.com/observable-transform-component"
 	},
-	"keywords": ["observable", "web component"],
+	"keywords": [
+		"observable",
+		"web component"
+	],
 	"author": "rektide de la faye",
 	"license": "X11",
 	"dependencies": {
+		"child-changed-callback": "^1.0.0",
 		"most": "^1.1.1"
 	}
 }
