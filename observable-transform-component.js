@@ -12,12 +12,19 @@ class ObservableTransform extends HTMLElement{
 	}
 	changedCallback(){
 		this.stream= null
-		var src= this.getAttribute( "src")
+		var
+		  src= this.getAttribute( "src"),
+		  target
 		if( !src){
-			console.error( "Expected `src` attribute")
-			return
+			if( this.parentNode.stream){
+				target= this.parentNode
+			}else{
+				console.error( "Expected `src` attribute")
+				return
+			}
+		}else{
+			target= document.getElementById( src)
 		}
-		var target= document.getElementById( src)
 		if( !target){
 			console.error( "Could not find target src `"+ src+ "`")
 			return
