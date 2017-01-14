@@ -51,11 +51,11 @@ class ObservableTransform extends HTMLElement{
 }
 
 if(typeof customElements !== "undefined" && customElements.define){
-	customElements.define("ObservableTransformComponent", ObservableTransformComponent)
+	customElements.define("ObservableTransform", ObservableTransform)
 }
 
 if(typeof module !== "undefined"){
 	module.exports= ObservableTransform
 	module.exports.default= ObservableTransform
-	module.exports.ObservableTransformComponent= ObservableTransform
+	module.exports.ObservableTransform= ObservableTransform
 }
