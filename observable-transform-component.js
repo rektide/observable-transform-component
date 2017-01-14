@@ -1,10 +1,13 @@
 var
   most= require( "most"),
+  MostCreate= require( "most-cree8"),
   childChangedCallback= require( "child-changed-callback")
 
 class ObservableTransform extends HTMLElement{
 	constructor(){
 		super()
+		var inner= new MostCreate( _switch => this._switch= _switch)
+		this.stream= inner.switchLatest()
 	}
 	changedCallback(){
 		this.stream= null
@@ -20,7 +23,7 @@ class ObservableTransform extends HTMLElement{
 		}
 
 		// chain children
-		this.stream= Array.prototype.reduce.call(current.childNodes, function(src, el){
+		var stream= Array.prototype.reduce.call( current.childNodes, function( src, el){
 			var srcId= src.getAttribute("id")
 			if( !srcId){
 				srcId= "otid-" + Math.floor( Math.random()* Number.MAX_SAFE_INTEGER)
@@ -32,6 +35,7 @@ class ObservableTransform extends HTMLElement{
 			el.setAttribute("src", srcId)
 			return el
 		}, src).stream
+		this._switch( stream)
 	}
 	get attributeChangedBack(){ return this.changedCallback}
 	get childChangedCallback(){ return this.changedCallback}
